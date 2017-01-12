@@ -1,0 +1,38 @@
+<MainScreen>:
+  BoxLayout:
+    orientation: 'vertical'
+    Label:
+      text: 
+
+    GridLayout:
+      row_force_default: True
+      row_default_height: 40
+
+      cols: 2
+
+
+      Label:
+        text: 'Test'
+      TextInput:
+        write_tab: False
+        multiline: False
+
+<UebersichtScreen>:
+  BoxLayout:
+
+
+<Manager>:
+  id: screen_manager
+
+  main_screen: main_screen
+  uebersicht_screen: uebersicht_screen
+
+  MainScreen:
+    id: main_screen
+    name: 'main'
+    manager: screen_manager
+
+  UebersichtScreen:
+    id: uebersicht_screen
+    name: 'uebersicht'
+    manager: screen_manager
