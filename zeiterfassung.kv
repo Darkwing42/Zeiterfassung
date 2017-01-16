@@ -2,7 +2,10 @@
   BoxLayout:
     orientation: 'vertical'
     Label:
-      text: 
+      text: root.time
+    Button:
+      text: 'Update Time'
+      on_press: root.updateTime
 
     GridLayout:
       row_force_default: True
@@ -14,8 +17,10 @@
       Label:
         text: 'Test'
       TextInput:
+
         write_tab: False
         multiline: False
+
 
 <UebersichtScreen>:
   BoxLayout:

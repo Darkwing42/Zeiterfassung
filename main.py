@@ -3,6 +3,8 @@
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.properties import ObjectProperty
+from kivy.properties import StringProperty
+
 
 import datetime
 
@@ -10,9 +12,19 @@ class UebersichtScreen(Screen):
     pass
 
 class MainScreen(Screen):
+    time = ObjectProperty(None)
 
-    def currentTime(self):
+    def __init__(self, **kwargs):
+        super(MainScreen,self).__init__(**kwargs)
+        self.time = datetime.datetime.now()
+        self.time = self.time.strftime("%d/%m/%y %H:%M:%S")
         
+
+    def updateTime(self, *args):
+        self.time = datetime.datetime.now()
+        self.time = self.time.strftime("%d/%m/%y %H:%M:%S")
+
+
 
 
 
